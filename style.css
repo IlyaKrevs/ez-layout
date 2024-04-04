@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+
+.pageWrapper {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+    position: relative;
+}
+
+.mainContainer {
+    background-color: rgba(192, 219, 217, 1);
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 100vh;
+}
+
+.headerContainer {
+    padding: 30.5px 30px;
+    background-color: rgba(127, 175, 246, 1);
+}
+
+.btnContainer {
+    padding: 8px 15px;
+    background-color: rgba(165, 199, 249, 1);
+    border-radius: 5px;
+    width: fit-content;
+    color: rgba(255, 255, 255, 1);
+
+    cursor: pointer;
+}
+
+.myCheckbox {
+    display: none;
+}
+
+.firstContainer {
+    background-color: rgba(179, 249, 90, 1);
+    height: 411px;
+    counter-reset: myCounter;
+
+    display: grid;
+    gap: 15px;
+    grid-template: 1fr 1fr / 2fr 3fr 1fr;
+    grid-template-areas:
+        "a b c"
+        "d d e";
+}
+
+.item1 {
+    grid-area: a;
+}
+
+.item2 {
+    grid-area: b;
+}
+
+.item3 {
+    grid-area: c;
+}
+
+.item4 {
+    grid-area: d;
+}
+
+.item5 {
+    grid-area: e;
+}
+
+.firstContainer .firstContainer__item::before {
+    counter-increment: myCounter;
+    content: counter(myCounter);
+}
+
+.firstContainer__item {
+    background-color: rgba(138, 209, 145, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 53px;
+    color: white;
+}
+
+.secondContainer {
+    background-color: rgba(136, 181, 191, 1);
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+}
+
+.secondContainer__item {
+    width: 100%;
+    background-color: rgba(13, 137, 176, 1);
+}
+
+.secondContainer__item::before {
+    display: block;
+    content: '';
+    padding-top: 75%;
+}
+
+.footerContainer {
+    margin-top: auto;
+    height: 100px;
+    background-color: rgba(127, 175, 246, 1);
+}
+
+.modalContainer {
+    position: absolute;
+    z-index: 5;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.myCheckbox:checked~.modalContainer {
+    visibility: visible;
+}
+
+.popupContainer {
+    position: relative;
+
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.popupContainer__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 8px 15px;
+
+    width: fit-content;
+    border-radius: 5px;
+    background-color: rgba(127, 175, 246, 1);
+    color: #fff;
+    cursor: pointer;
+}
+
+.popupContainer__title {
+    font-size: 53px;
+    line-height: 62.11px;
+    color: black;
+}
